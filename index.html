@@ -38,13 +38,13 @@
             <section>
                 <ul class="cards">
                     <li class="card" ng-repeat="employee in filteredEmployees = (employees | filter: searchString:strict | orderBy: sortCol : sortReverse)">
-                        <img ng-src='{{employee.picUrl}}' alt="picture of {{employee.firstName}}'/>
+                        <img ng-src='{{employee.picUrl}}' alt="picture of {{employee.firstName}} {{employee.lastName}}"/>
                         <div class="details">
-                            <h2 class="name">{{employee.lastName}} , {{employee.firstName}}</h2>
+                            <h2 class="name">{{employee.lastName}}, {{employee.firstName}}</h2>
                             <p class="title">{{employee.title}}</p>
                             <p class="department">{{employee.department}}</p>
                             <p class="phone" ng-if="employee.phone"><a ng-href="tel:{{employee.phone}}">{{employee.phone}}</a></p>
-                            <p class="email" ng-if="employee.email"/><a ng-href="mailto:{{employee.email}}">{{employee.email}}</a></p>
+                            <p class="email" ng-if="employee.email"><a ng-href="mailto:{{employee.email}}">{{employee.email}}</a></p>
                         </div>
                     </li>
                 </ul>
